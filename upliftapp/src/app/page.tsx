@@ -3,6 +3,7 @@
 export default function HomePage() {
     return (
         <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-50">
+        <img src="/uplift.png" alt="My Image" width={1000} height={600} />
             {/* Main Content (Moved Higher) */}
             <div className="text-center max-w-3xl">
                 <h1 className="text-5xl font-extrabold text-gray-900">
@@ -29,5 +30,6 @@ export default function HomePage() {
                 </div>
             </div>
         </div>
+
     );
 }
