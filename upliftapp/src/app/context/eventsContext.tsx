@@ -21,7 +21,6 @@
     export function EventsProvider({ children }: { children: React.ReactNode }) {
         const [events, setEvents] = useState<Event[]>([]);
 
-        // Simulating fetching events (replace with API call if using a database)
         useEffect(() => {
             setEvents([
                 { id: 101, name: "Food Drive", date: "2025-03-15", location: "Community Hall", organizationId: 1, organizationName: "Local Food Bank" },

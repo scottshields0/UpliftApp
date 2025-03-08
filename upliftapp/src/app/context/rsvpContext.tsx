@@ -21,7 +21,6 @@ export function RSVPProvider({ children }: { children: React.ReactNode }) {
 
     const addRSVP = (event: Event) => {
         setRsvpEvents((prev) => {
-            // Prevent duplicate RSVPs
             if (prev.some((e) => e.id === event.id)) return prev;
             return [...prev, event];
         });

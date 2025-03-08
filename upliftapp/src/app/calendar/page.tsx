@@ -3,40 +3,35 @@ import { useState, useEffect } from "react";
 import Calendar from "react-calendar";
 import "react-calendar/dist/Calendar.css";
 import Modal from "react-modal";
-import { useEvents } from "@/app/context/eventsContext"; // Fetch public events
-import { useRSVP } from "@/app/context/rsvpContext"; // Fetch & update RSVPed events
+import { useEvents } from "@/app/context/eventsContext";
+import { useRSVP } from "@/app/context/rsvpContext";
 
 export default function CalendarPage() {
-  const { events } = useEvents(); // Public events
-  const { rsvpEvents, addRSVP } = useRSVP(); // RSVPed events
+  const { events } = useEvents();
+  const { rsvpEvents, addRSVP } = useRSVP();
   const [date, setDate] = useState(new Date());
   const [selectedEvent, setSelectedEvent] = useState(null);
   const [modalIsOpen, setModalIsOpen] = useState(false);
 
-  // ✅ Fix: Ensure Modal only sets app element after the component mounts
   useEffect(() => {
     Modal.setAppElement(document.body);
   }, []);
 
-  // Merge RSVPed and Public Events dynamically
   const allEvents = [...events, ...rsvpEvents];
 
-  // Open Modal when clicking an event
   const openModal = (event) => {
     setSelectedEvent(event);
     setModalIsOpen(true);
   };
 
-  // Close Modal
   const closeModal = () => {
     setModalIsOpen(false);
     setSelectedEvent(null);
   };
 
-  // RSVP to an Event
   const handleRSVP = () => {
     if (!selectedEvent) return;
-    addRSVP(selectedEvent); // Corrected RSVP function call
+    addRSVP(selectedEvent);
     closeModal();
   };
 
