@@ -6,6 +6,7 @@ export default function NavBar() {
         <Link href="/" className="text-blue-500">Home</Link>
         <Link href="/organizations" className="text-blue-500">Organizations</Link>
         <Link href="/events" className="text-blue-500">Events</Link>
+        <Link href="/calendar" className="text-blue-500">Calendar</Link>
     </nav>
     );
 }
