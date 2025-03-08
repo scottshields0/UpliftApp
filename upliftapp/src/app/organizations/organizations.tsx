@@ -21,17 +21,21 @@ export default function Organizations() {
     }, []);
 
     return (
-        <div className="p-4">
-            <h1 className="text-2xl font-bold">Organizations</h1>
-            <ul className="mt-4">
+        <div className="p-6 max-w-4xl mx-auto">
+            {/* Title */}
+            <h1 className="text-3xl font-bold text-gray-900 mb-6 text-center">Organizations</h1>
+            
+            {/* Organization List */}
+            <div className="grid gap-4">
                 {organizations.map((org) => (
-                    <li key={org.id} className="p-2 bg-gray-100 rounded-md mt-2">
-                        <Link href={`/organizations/${org.id}`} className="text-blue-600 hover:underline">
-                            {org.name} - {org.location}
-                        </Link>
-                    </li>
+                    <Link key={org.id} href={`/organizations/${org.id}`} className="block">
+                        <div className="bg-white border border-gray-300 rounded-lg shadow-md p-4 hover:shadow-lg transition-shadow duration-200">
+                            <h2 className="text-xl font-semibold text-green-700">{org.name}</h2>
+                            <p className="text-gray-600">{org.location}</p>
+                        </div>
+                    </Link>
                 ))}
-            </ul>
+            </div>
         </div>
     );
 }
