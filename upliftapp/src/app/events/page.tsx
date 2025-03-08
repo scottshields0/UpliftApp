@@ -1,7 +1,7 @@
 "use client";
 
 import { useEvents } from "@/app/context/eventsContext";
-import { useRSVP } from "@/app/context/rsvpContext"; // Import RSVP context
+import { useRSVP } from "@/app/context/rsvpContext"; 
 import EventCard from "@/components/eventCard";
 
 export default function Events() {
