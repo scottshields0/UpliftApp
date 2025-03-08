@@ -1,5 +1,5 @@
 import { ReactNode } from "react";
-import { RSVPProvider } from "@/context/rsvpContext";
+import { RSVPProvider } from "@/app/context/rsvpContext";
 import NavBar from "@/components/NavBar";
 import "@/styles/globals.css";
 

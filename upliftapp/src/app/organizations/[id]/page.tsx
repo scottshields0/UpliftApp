@@ -1,6 +1,7 @@
 "use client";
 
 import { useParams, useRouter } from "next/navigation";
+import { useRSVP } from "@/app/context/rsvpContext";
 
 type Organization = {
     id: number;
