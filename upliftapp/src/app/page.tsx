@@ -2,7 +2,7 @@
 
 export default function HomePage() {
     return (
-        <div className="flex flex-col items-center justify-center min-h-screen p-8 bg-gray-50">
+        <div className="flex flex-col items-center justify-center">
         <img src="/uplift.png" alt="My Image" width={1000} height={600} />
             {/* Main Content (Moved Higher) */}
             <div className="text-center max-w-3xl">
