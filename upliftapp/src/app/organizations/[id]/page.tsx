@@ -1,4 +1,6 @@
-import { useParams } from "next/navigation";
+"use client";
+
+import { useParams, useRouter } from "next/navigation";
 
 type Organization = {
     id: number;
@@ -15,12 +17,16 @@ const sampleData: Organization[] = [
 
 export default function OrganizationPage() {
     const { id } = useParams();
+    const router = useRouter();
     const org = sampleData.find((o) => o.id === Number(id));
 
     if (!org) return <p>Organization not found</p>;
 
     return (
         <div className="p-4">
+            <button onClick={() => router.back()} className="mb-4 px-4 py-2 bg-gray-200 rounded hover:bg-gray-300">
+                ← Back to Organizations
+            </button>
             <h1 className="text-3xl font-bold">{org.name}</h1>
             <p className="mt-2">{org.about}</p>
             <h2 className="text-xl font-semibold mt-4">Upcoming Events</h2>
